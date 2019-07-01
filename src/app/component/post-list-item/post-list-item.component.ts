@@ -14,7 +14,7 @@ export class PostListItemComponent implements OnInit {
   constructor(private postService: PostService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.post = new Post('', '', new Date(), 0);
+    this.post = new Post('', '', Date.now(), 0);
     const id = this.route.snapshot.params.id;
     this.postService.getsinglePost(+id).then(
       (post: Post) => {

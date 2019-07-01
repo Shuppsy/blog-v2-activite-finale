@@ -3,15 +3,15 @@
     <h2 class="my-4">Liste des Posts
     </h2>
     <div class="list-group">
-      <button class="list-group-item p-0 m-0 mb-3" *ngFor="let post of posts; let i = index" (click)="onViewPost()">
+      <button class="list-group-item p-0 m-0 mb-3" *ngFor="let post of posts; let i = index" (click)="onViewPost(i)">
         <div [ngClass]="{'rounded-0':true ,'m-0':true, 'py-3': true, 'alert': true, 'alert-success': post.loveIts > 0, 'alert-danger':
   post.loveIts < 0}">
           <div class="row">
             <div class="col-md-6 mb-4">
               <h2 class="font-weight-bold mb-0">{{ post.title }}</h2>
             </div>
-            <div class="col-md-6 text-muted text-right"><em>date:
-                {{ post.created_at | date: 'EEEE dd MMMM yyyy, HH:mm'}}</em>
+            <div class="col-md-6 text-muted text-right"><em>
+                {{ post.createdAt | date: 'EEEE dd MMMM yyyy, HH:mm'}}</em>
             </div>
           </div>
           <div class="col-md-12 my-3 text-left">{{ post.content }}</div>
@@ -26,7 +26,7 @@
               <span class="fa-layers fa-fw ml-auto">
                 <i
                   [ngClass]="{'fas': true, 'fa-3x': true, 'fa-heart': post.loveIts >= 0, 'fa-heart-broken': post.loveIts < 0}"></i>
-                <span class="fa-layers-counter badge badge-pill badge-danger py-3">{{post.loveIts}}</span>
+                <span class="fa-layers-counter fa-3x">{{post.loveIts}}</span>
               </span>
             </div>
           </div>

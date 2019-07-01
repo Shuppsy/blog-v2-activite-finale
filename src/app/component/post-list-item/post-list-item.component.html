@@ -2,23 +2,23 @@
   <div class="col-md-12">
     <h2 class="my-4">Post</h2>
     <div class="list-group">
-      <div class="list-group-item">
-        <div [ngClass]="{'py-3': true, 'alert': true, 'border':true,'border-custom':true, 'alert-success': post.loveIts > 0, 'alert-danger':
+      <div [ngClass]="{'py-3': true, 'alert': true, 'border': true, 'border-custom':true, 'alert-success': post.loveIts > 0, 'alert-danger':
   post.loveIts < 0}">
+        <div class="row">
           <div class="col-md-6 mb-4">
-            <h2 class="font-weight-bold">{{ post.title }}</h2>
+            <h2 class="font-weight-bold mb-4">{{ post.title }}</h2>
           </div>
           <div class="col-md-6 text-muted text-right">
-            <em>{{ post.created_at | date: 'EEEE dd MMMM yyyy, HH:mm'}}</em>
+            <em>{{ post.createdAt | date: 'EEEE dd MMMM yyyy, HH:mm'}}</em>
           </div>
-          <div class="col-md-12 mb-3">{{ post.content }}</div>
-          <div class="col-md-2 ">
-            <span class="fa-layers fa-fw">
-              <i
-                [ngClass]="{'fas': true, 'fa-3x': true, 'fa-heart': post.loveIts >= 0, 'fa-heart-broken': post.loveIts < 0}"></i>
-              <span class="fa-layers-counter badge badge-pill badge-danger py-1">{{post.loveIts}}</span>
-            </span>
-          </div>
+        </div>
+        <div class="col-md-12 mb-3">{{ post.content }}</div>
+        <div class="col-md-12 ">
+          <span class="fa-layers fa-fw float-right my-5">
+            <i
+              [ngClass]="{'fas': true, 'fa-3x': true, 'fa-heart': post.loveIts >= 0, 'fa-heart-broken': post.loveIts < 0}"></i>
+            <span class="fa-layers-counter fa-3x">{{post.loveIts}}</span>
+          </span>
         </div>
       </div>
     </div>
