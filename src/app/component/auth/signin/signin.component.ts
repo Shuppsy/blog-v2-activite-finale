@@ -35,7 +35,7 @@ export class SigninComponent implements OnInit {
         this.router.navigate(['/posts']);
       },
       (error) => {
-        this.errorMessage = 'Formulaire invalide, l\'email et/ou le mot de passe ne correspondent à aucun compte !';
+        this.errorMessage = 'L\'email ne correspond à aucun compte !';
       }
     );
   }

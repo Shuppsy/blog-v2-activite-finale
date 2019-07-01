@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-signup',
@@ -35,7 +36,8 @@ export class SignupComponent implements OnInit {
         this.router.navigate(['/posts']);
       },
       (error) => {
-        this.errorMessage = 'Attention, cet email correspond dèjà à un autre compte !';
+
+        this.errorMessage = error;
       }
     );
   }

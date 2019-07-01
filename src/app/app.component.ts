@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import * as firebase from 'firebase';
+import { fadeAnimation } from './animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [fadeAnimation]
 })
 export class AppComponent {
   title = 'blog';
