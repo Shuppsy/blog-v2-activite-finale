@@ -13,8 +13,13 @@
             <div class="col-md-6 text-muted text-right"><em>
                 {{ post.createdAt | date: 'EEEE dd MMMM yyyy, HH:mm'}}</em>
             </div>
+            <div class="col-md-12"><button class="btn btn-sm btn-danger float-right" (click)="onDeletePost(post)"><i
+                  class="fas fa-times"></i></button></div>
           </div>
           <div class="col-md-12 my-3 text-left">{{ post.content }}</div>
+          <div class="col-md-12 mt-5">
+            <p class="text-left">Créer par : {{ post.mailUser }}</p>
+          </div>
           <div class="row pt-3">
             <div class="col-md-4">
               <button class="btn btn-success mb-2" (click)="post.loveIts=post.loveIts+1; onSaveLove()">Love it <i
