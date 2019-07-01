@@ -10,7 +10,7 @@
             <div class="col-md-6 mb-4">
               <h2 class="font-weight-bold mb-0">{{ post.title }}</h2>
             </div>
-            <div class="col-md-6 text-muted text-right"><em>
+            <div class="col-md-6 text-muted text-right mt-3"><em>
                 {{ post.createdAt | date: 'EEEE dd MMMM yyyy, HH:mm'}}</em>
             </div>
             <div class="col-md-12"><button class="btn btn-sm btn-danger float-right" (click)="onDeletePost(post)"><i

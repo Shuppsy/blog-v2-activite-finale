@@ -35,7 +35,7 @@ export class SignupComponent implements OnInit {
         this.router.navigate(['/posts']);
       },
       (error) => {
-        this.errorMessage = 'Formulaire invalide, veuillez vérifier votre email et/ou votre mot de passe !';
+        this.errorMessage = 'Attention, cet email correspond dèjà à un autre compte !';
       }
     );
   }
